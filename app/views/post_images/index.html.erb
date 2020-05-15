@@ -10,7 +10,7 @@
               <div class="block block-image v1">
                 <div class="block-image">
                   <div class="view view-first">
-                    <%= attachment_image_tag post_image, :image %>
+                     <%= attachment_image_tag post_image, :image %>
             <!-- attachment_image_tagは、refile側(画像投稿用gem)が用意したヘルパーで、
               <img>タグを作成してくれます。 -->
             <!-- post_image変数のimage_idに保存された画像の<img>タグを生成します。 -->
@@ -32,7 +32,8 @@
                <!-- post_image変数のuser_idに関連付けられているuserモデルのnameカラムを表示-->
                     </li>
                     <li>
-                    <a href="#">23 コメント</a>
+                    <%= link_to "#{post_image.post_comments.count}コメント",post_image_path(post_image.id) %>
+                    <!-- コメント件数の表示 -->
                     </li>
                   </ul>
                 </div>
@@ -44,3 +45,8 @@
     </div>
   </div>
 </section>
+
+<% @post_images.each do |post_image| %>
+
+<% end %>
+<%= paginate @post_images %>

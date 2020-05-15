@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
     # configure_permitted_parametersでは、devise_parameter_sanitizer.permitで
     # nameのデータ操作を許可するアクションメソッドが指定されている。
   end
+  Refile.secret_key = '623a2a20f57724e28bb553c40d28fb70aa88f2b231afc688f34061e6828a40051c0f8bacc135f52aa78e6857b0ab3c062007ab6623f8cdc5950c416ad38e635b'
 
 end
