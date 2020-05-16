@@ -12,6 +12,7 @@ class User < ApplicationRecord
   # dependent: :destroyはUserのデータが削除された時、
   # そのUserが投稿したコメントデータも一緒に削除される
   	has_many :favorites, dependent: :destroy
-
+    attachment :profile_image
+# カラム名（profile_image_id）から_idを除いた名前（profile_image）を記述
 
 end
